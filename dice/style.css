@@ -246,5 +246,9 @@ body{
   padding-top: 10px;
 }
 
+footer{
+  display: none;
+}
+
 }
 
