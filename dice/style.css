@@ -130,13 +130,15 @@ main {
 }
 
 .btn--new {
-  top: 4rem;
+  top: 4.3rem;
+  background-color:#ffb5e1 ;
 }
 .btn--roll {
   top: 39.3rem;
 }
 .btn--hold {
   top: 46.1rem;
+  
 }
 
 .btn:active {
@@ -185,3 +187,64 @@ footer p{
   font-size: 15px;
   font-weight: 500;
 }
+
+
+@media (max-width: 567px){
+body{
+  margin:0;
+  overflow:hidden;
+}
+
+.score{
+  margin: 0px;
+}
+.current{
+  /* position: absolute; */
+  bottom: 0;
+}
+
+.player{
+  /* position: absolute; */
+  padding-bottom: 35%;
+}
+
+.dice{
+  top: 8.5rem;
+
+}
+.btn--new {
+  top: 1rem;
+}
+
+.btn--roll {
+  top: 28.0rem;
+}
+.btn--hold {
+  top: 34.1rem;
+  
+}
+
+.score{
+  margin-bottom: 50px;
+}
+
+.wrapper{
+  transform: rotate(90deg);
+  transform-origin:bottom left;
+  
+  position:absolute;
+  top: -100vw;
+  left: 0;
+  
+  height:100vw;
+  width:100vh;
+  
+  overflow:auto;
+
+}
+.player{
+  padding-top: 10px;
+}
+
+}
+
