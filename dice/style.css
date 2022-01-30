@@ -100,7 +100,7 @@ main {
 }
 
 /* ABSOLUTE POSITIONED ELEMENTS */
-.btn {
+.btn1 {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -171,3 +171,17 @@ main {
   display: none;
 }
 
+
+
+footer{
+  position: absolute;
+  bottom: 0;
+
+  /* right: 0; */
+}
+
+footer p{
+  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+}
