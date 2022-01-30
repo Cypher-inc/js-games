@@ -115,7 +115,7 @@ hold.addEventListener('click',function(){
            p1_act.classList.add('player--winner')
         }
     }
-    else{
+    else if(p1_act.classList.contains('player--active')){
         score1El.textContent = val2
         score2.textContent = 0
         p2_act.classList.remove('player--active')
