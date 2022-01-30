@@ -95,7 +95,7 @@ hold.addEventListener('click',function(){
         p1_act.classList.remove('player--active')
         p2_act.classList.add('player--active')
 
-        if(val1 >= 10){
+        if(val1 >= 50){
            p1_name = document.querySelector('#name--0');
            p1_name.textContent = 'Player 1'
            p2_act.classList.remove('player--active')
@@ -110,7 +110,7 @@ hold.addEventListener('click',function(){
         p2_act.classList.remove('player--active')
         p1_act.classList.add('player--active')
 
-        if(val2 >= 10){
+        if(val2 >= 50){
             p2_name = document.querySelector('#name--1');
             p2_name.textContent = 'Player 2'
             p1_act.classList.remove('player--active')
