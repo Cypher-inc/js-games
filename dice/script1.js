@@ -120,7 +120,7 @@ hold.addEventListener('click',function(){
         score2.textContent = 0
         p2_act.classList.remove('player--active')
         p1_act.classList.add('player--active')
-
+        var main1 = document.querySelector('.main');
         if(val2 >= 10){
             p2_name = document.querySelector('#name--1');
             p2_name.textContent = 'Player 2 WON!'
