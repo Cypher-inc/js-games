@@ -18,38 +18,27 @@ var checkNum = function(add_Num){
     diceEl.classList.remove('hidden');
     switch(add_Num){
         case 1:
-            document.querySelector('.dice').src = "dice-1.png";
+            document.querySelector('.dice').src = "images/dice-1.png";
             break;
         case 2:
-            document.querySelector('.dice').src = "dice-2.png";
+            document.querySelector('.dice').src = "images/dice-2.png";
             break;
         case 3:
-            document.querySelector('.dice').src = "dice-3.png";
+            document.querySelector('.dice').src = "images/dice-3.png";
             break;
         case 4:
-            document.querySelector('.dice').src = "dice-4.png";
+            document.querySelector('.dice').src = "images/dice-4.png";
             break;
         case 5:
-            document.querySelector('.dice').src = "dice-5.png";
+            document.querySelector('.dice').src = "images/dice-5.png";
             break;
         case 6:
-            document.querySelector('.dice').src = "dice-6.png";
+            document.querySelector('.dice').src = "images/dice-6.png";
             break;
     }
 }
 
-var add_Num, check1
-//check number
-// var check_Num = function(add_Num){
-//     if(check1 === add_Num){
-//         var add_Num1 = Number(Math.trunc(Math.random()*3) + 1);
-//         return add_Num1;
-//     }
-//     else{
-//         return add_Num
-//     }
-// }
-
+var add_Num
 roll.addEventListener('click',function(){
         if(p1_act.classList.contains('player--winner') || p2_act.classList.contains('player--winner')){
             score0El.textContent = val1
@@ -59,8 +48,7 @@ roll.addEventListener('click',function(){
   
         add_Num = Number(Math.trunc(Math.random()*6) + 1);
 
-            // var add_Num1 = check_Num(add_Num)
-            // score1.textContent = add_Num
+ 
             score1.textContent = Number(score1.textContent) + Number(add_Num)
             // console.log(typeof(score1.textContent));
 
@@ -77,7 +65,6 @@ roll.addEventListener('click',function(){
         else{
             console.log((add_Num));
             add_Num = Number(Math.trunc(Math.random()*6) + 1);
-        // score1.textContent = add_Num
            score2.textContent = Number(score2.textContent) + Number(add_Num)
             // console.log(typeof(score1.textContent));
             if(add_Num === 1){
@@ -91,28 +78,30 @@ roll.addEventListener('click',function(){
     });
 
 
-
-
-    var val1 = 0, val2 = 0;
+    var val1 = 0, val2 = 0, l1 = 0, r1 = 0;
     var p1_name;
     var p2_name;
+    var scEl = document.querySelector('.btn--sc');
+    scEl.textContent = `${l1} : ${r1}` 
+
 hold.addEventListener('click',function(){
      val1 = +val1 + +score1.textContent
      val2 = +val2 + +score2.textContent
 
-    // console.log(val);
-    // diceEl.classList.add('hidden');
+
     if(p1_act.classList.contains('player--active')){
         score0El.textContent = val1
         score1.textContent = 0
         p1_act.classList.remove('player--active')
         p2_act.classList.add('player--active')
 
-        if(val1 >= 50){
+        if(val1 >= 10){
            p1_name = document.querySelector('#name--0');
-           p1_name.textContent = 'Player 1 WON!'
+           p1_name.textContent = 'Player 1'
            p2_act.classList.remove('player--active')
            p1_act.classList.add('player--winner')
+            scEl.textContent = `${++l1} : ${r1}` 
+
         }
     }
     else{
@@ -121,32 +110,21 @@ hold.addEventListener('click',function(){
         p2_act.classList.remove('player--active')
         p1_act.classList.add('player--active')
 
-        if(val2 >= 50){
+        if(val2 >= 10){
             p2_name = document.querySelector('#name--1');
-            p2_name.textContent = 'Player 2 WON!'
+            p2_name.textContent = 'Player 2'
             p1_act.classList.remove('player--active')
             p2_act.classList.add('player--winner')
+            scEl.textContent = `${l1}   :   ${++r1}` 
+
          }
     }
 
 });
 
 var newEl = document.querySelector('.btn--new');
-
 newEl.addEventListener('click',function(){
-
-    if(p1_act.classList.contains('player--winner') && p2_act.classList.contains('player--winner')){
-        p1_name.textContent = 'Player 1'
-        p2_name.textContent = 'Player 2'
-    }
-    else if(p1_act.classList.contains('player--winner')){
-        p1_name.textContent = 'Player 1'
-    }
-    else if(p2_act.classList.contains('player--winner')){
-        p2_name.textContent = 'Player 2'
-    }
     
-
         p1_act.classList.add('player--active')
         p2_act.classList.remove('player--active')
         p1_act.classList.remove('player--winner')
@@ -163,3 +141,4 @@ newEl.addEventListener('click',function(){
     diceEl.classList.add('hidden');
 
 });
+

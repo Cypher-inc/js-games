@@ -133,6 +133,12 @@ main {
   top: 4.3rem;
   background-color:#ffb5e1 ;
 }
+
+.btn--sc {
+  top: 32.8rem;
+}
+
+
 .btn--roll {
   top: 39.3rem;
 }
@@ -215,7 +221,9 @@ body{
 .btn--new {
   top: 1rem;
 }
-
+.btn--sc{
+  top: 22.0rem;
+}
 .btn--roll {
   top: 28.0rem;
 }
