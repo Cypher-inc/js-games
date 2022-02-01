@@ -170,9 +170,13 @@ main {
   background-color: #A1E8A1;
 }
 
-.player--winner .name {
+.player--winner .name{
   font-weight: 700;
   color: #c7365f;
+}
+
+.player--winner .score {
+  font-weight: 500;
 }
 
 .hidden{
